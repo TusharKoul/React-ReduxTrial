@@ -5,8 +5,12 @@ class TodoList extends Component {
 
     createTodoList() {
         return this.props.todos.map((todoItem) => {
-            //return <li key={todoItem.id}> {todoItem.text} </li>
-            return (<TodoItem key={todoItem.id} todo={todoItem} dispatch={this.props.dispatch}/>);
+            return (
+                <TodoItem
+                    key={todoItem.id}
+                    todo={todoItem}
+                    actions = {this.props.actions}/>
+            );
         });
     }
 
