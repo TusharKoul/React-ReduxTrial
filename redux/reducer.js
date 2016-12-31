@@ -26,7 +26,6 @@ export default (state, action) => {
             // assign state to new object given in 3rd parameter,
             // for all todos, if the action id matches, then toggle to-do completed and return the object,
             // else return previous to-do
-            console.log("complete reducer",action.todoId);
             return Object.assign({}, state,  {
                 todos: state.todos.map((todo) => {
                     return todo.id == action.todoId ? toggleTodoComplete(todo) : todo;
@@ -38,11 +37,17 @@ export default (state, action) => {
             // if the function returns true, then that to-do is kept in the array,
             // all other to-dos are removed
             // so we want keep all todos where action.id doesn't match to-do.id
-            console.log("DELETE reducer",action.todoId);
             return Object.assign({}, state,  {
                 todos: state.todos.filter((todo) => {
                     return todo.id !== action.todoId
                 })
+            });
+
+        case 'CREATE_NEW_USER_ID':
+            return Object.assign({}, state,  {
+                user: {
+                    id: action.id,
+                }
             });
 
         default : return state;

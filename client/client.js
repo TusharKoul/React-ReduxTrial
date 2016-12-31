@@ -11,7 +11,11 @@ let initialState = {
             completed : false,
             text : 'build dat app'
         }
-    ]
+    ],
+    user : {
+        username : 'tushar',
+        id : 13
+    }
 };
 
 let store = configureStore(initialState);
