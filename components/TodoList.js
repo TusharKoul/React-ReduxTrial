@@ -6,7 +6,7 @@ class TodoList extends Component {
     createTodoList() {
         return this.props.todos.map((todoItem) => {
             //return <li key={todoItem.id}> {todoItem.text} </li>
-            return (<TodoItem key={todoItem.id} todo={todoItem}/>);   // key is needed any time we use a for loop
+            return (<TodoItem key={todoItem.id} todo={todoItem} dispatch={this.props.dispatch}/>);
         });
     }
 
@@ -21,4 +21,4 @@ class TodoList extends Component {
 
 }
 
-export default TodoList
+export default TodoList;

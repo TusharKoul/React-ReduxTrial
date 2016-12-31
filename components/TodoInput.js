@@ -1,5 +1,5 @@
-import React, { Component } from 'react'
-import actions from '../redux/actions'
+import React, { Component } from 'react';
+import actions from '../redux/actions';
 
 class TodoInput extends Component {
 

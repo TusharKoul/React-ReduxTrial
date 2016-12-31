@@ -6,12 +6,11 @@ import {connect} from "react-redux";
 class App extends Component {
 
   render() {
-      console.log('App rendering with ',this.props)
     return (
       <div>
           <h1>To do List</h1>
           <TodoInput dispatch={this.props.dispatch} />
-          <TodoList todos={this.props.todos}/>
+          <TodoList todos={this.props.todos} dispatch={this.props.dispatch}/>
       </div>
     )
   }
@@ -19,7 +18,6 @@ class App extends Component {
 }
 
 function mapStateToProps(state) {
-    console.log(state)
     return state;
 }
 
