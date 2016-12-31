@@ -24,7 +24,7 @@ let actions = {
         console.log("CREATE USER!!");
         return {
             type : 'CREATE_NEW_USER_ID',
-            id : Math.random()
+            id : Math.random() + 2000
         }
     },
 };
