@@ -4,7 +4,15 @@ class UserInfo extends Component {
 
 
     handleNewId(event) {
-        this.props.createNewUserId()
+        this.props.actions.createNewUserId()
+    }
+
+    handleNewIdIfOdd(event) {
+        this.props.actions.createNewUserIdIfOdd()
+    }
+
+    handleNewIdAsync(event) {
+        this.props.actions.createNewUserIdAsync()
     }
 
     render() {
@@ -13,6 +21,8 @@ class UserInfo extends Component {
                 <div>username : {this.props.user.username}</div>
                 <div>id: {this.props.user.id}</div>
                 <button onClick={this.handleNewId.bind(this)}>Update Id</button>
+                <button onClick={this.handleNewIdIfOdd.bind(this)}>Update Id ONLY IF ODD</button>
+                <button onClick={this.handleNewIdAsync.bind(this)}>Update Id ASYNC</button>
             </div>
         )
     }

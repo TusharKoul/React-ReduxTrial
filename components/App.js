@@ -17,7 +17,7 @@ class App extends Component {
               todos={this.props.todos}
               actions = {this.props.actions}
           />
-          <UserInfo user={this.props.user} createNewUserId={this.props.actions.createNewUserId}/>
+          <UserInfo user={this.props.user} actions={this.props.actions}/>
       </div>
     )
   }

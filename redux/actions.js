@@ -21,12 +21,31 @@ let actions = {
     },
 
     createNewUserId() {
-        console.log("CREATE USER!!");
         return {
             type : 'CREATE_NEW_USER_ID',
-            id : Math.random() + 2000
+            id : Math.round(Math.random() * 1000)
         }
     },
+
+    createNewUserIdIfOdd() {
+        // Redux-Thunk code for async tasks
+        return (dispatch, getState) => {
+            const {user} = getState();       // To pull out {user} info from state, kinda like import
+            if (user.id % 2 === 0) {
+                return;
+            }
+            dispatch(actions.createNewUserId())
+        }
+    },
+
+    createNewUserIdAsync() {
+        // Redux-Thunk code for async tasks
+        return (dispatch, getState) => {
+            setTimeout(() => {
+                dispatch(actions.createNewUserId())
+            },2000);
+        }
+    }
 };
 
 export default actions;
